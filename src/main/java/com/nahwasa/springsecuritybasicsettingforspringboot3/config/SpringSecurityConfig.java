@@ -28,7 +28,7 @@ public class SpringSecurityConfig {
                 .authorizeHttpRequests(request -> request
                         .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
                         .requestMatchers("/status", "/images/**", "/view/join", "/auth/join").permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().authenticated() // 어떤 인가를 할 것인가에 대한 체인
                 )
                 .formLogin(login -> login
                         .loginPage("/view/login")
